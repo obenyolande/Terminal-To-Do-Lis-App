@@ -12,8 +12,8 @@ else
     echo "Error: task text is required"
 fi
 }
-
-#Function to list all tasks
+g
+#Function to list all task
 List_task() {
     if [[ -f "$TASK_FILE" ]]; then
        echo "Task:"
