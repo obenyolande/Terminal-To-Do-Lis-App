@@ -12,7 +12,7 @@ else
     echo "Error: task text is required"
 fi
 }
-g
+
 #Function to list all task
 List_task() {
     if [[ -f "$TASK_FILE" ]]; then
@@ -26,7 +26,7 @@ List_task() {
  #function to delete task
 delete_task() {
   if [[ -f "$TASK_FILE" ]] && [[ $2 -gt 0 ]]; then
-    sed -1 '2d' "$TASK_FILE"
+    sed -1 '' '2d' "$TASK_FILE"
     echo "task $2 deleted"
 else
     echo "error: invalid ask number"
@@ -52,6 +52,6 @@ fi
   *)
     echo "Usage: $0 [add|list] [task text]"
     echo "add <task text>: add a new task"
-    echo "list :list all tasks"
+    echo "usage ./todo.sh, del 2"
   ;;
 esac
