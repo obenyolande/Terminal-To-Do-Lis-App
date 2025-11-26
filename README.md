@@ -13,7 +13,7 @@ git clone
 cd to directory
 cd Terminal-TO-DO-list-App
 ```
-#### Contact/Credit 
+### Contact/Credit
 Created bY [obenyolande] (git@github.com:)
 For support contact obenyolande@gmail.com
 Feel free to to reach out with questions.
