@@ -24,15 +24,16 @@ List_task() {
 }
 
  #function to delete task
-delete_task() {
-  if [[ -f "$TASK_FILE" ]] && [[ $2 -gt 0 ]]; then
-    sed -1 '' '2d' "$TASK_FILE"
-    echo "task $2 deleted"
-else
-    echo "error: invalid ask number"
-fi
+# delete_task() {
+#   if [[ -f "$TASK_FILE" ]] && [[ $2 -gt 0 ]]; then
+#     sed -1 '' '2d' "$TASK_FILE"
+#     echo "task $2 deleted"
+# else
+#     echo "error: invalid ask number"
+# fi
 
-}
+# }
+
 #Main Logic
 case $1 in
 add)
@@ -45,6 +46,8 @@ del)
 
 if [[ $(wc -l < $TASK_FILE) -ge 2 && $2 -eq 2 ]]; then 
     sed -i '2d' "task.txt"
+elif [[ $2 -ne 2 ]]; then
+    echo "Second argument must be 2"
 else
    echo "file has only one line"
 fi
@@ -55,3 +58,4 @@ fi
     echo "usage ./todo.sh, del 2"
   ;;
 esac
+
