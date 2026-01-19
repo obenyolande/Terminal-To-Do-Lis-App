@@ -5,13 +5,13 @@ TASK_FILE="task.txt"
 
 #Function to add task
 add_task() {
-if [[ -n "$1" ]]; then
-  echo "$1" >> task.txt
-  echo "Task added $1"
-else
-    echo "Error: task text is required"
-fi
-}
+    if [[ -n "$1" ]]; then
+      echo "$1" >> task.txt
+      echo "Task added $1"
+    else
+        echo "Error: task text is required"
+    fi
+    }
 
 #Function to list all task
 List_task() {
@@ -36,26 +36,26 @@ List_task() {
 
 #Main Logic
 case $1 in
-add)
-add_task "$2"
-;;
-list)
-List_task
-;;
-del)
+  add)
+    add_task "$2"
+  ;;
+  list)
+    List_task
+  ;;
+  del)
 
-if [[ $(wc -l < $TASK_FILE) -ge 2 && $2 -eq 2 ]]; then 
-    sed -i '2d' "task.txt"
-elif [[ $2 -ne 2 ]]; then
-    echo "Second argument must be 2"
-else
-   echo "file has only one line"
-fi
-  ;;
-  *)
-    echo "Usage: $0 [add|list] [task text]"
-    echo "add <task text>: add a new task"
-    echo "usage ./todo.sh, del 2"
-  ;;
-esac
+  if [[ $(wc -l < $TASK_FILE) -ge 2 && $2 -eq 2 ]]; then 
+      sed -i '2d' "task.txt"
+  elif [[ $2 -ne 2 ]]; then
+      echo "Second argument must be 2"
+  else
+    echo "file has only one line"
+  fi
+    ;;
+    *)
+      echo "Usage: $0 [add|list] [task text]"
+      echo "add <task text>: add a new task"
+      echo "usage ./todo.sh, del 2"
+    ;;
+  esac
 
