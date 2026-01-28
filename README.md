@@ -6,6 +6,9 @@ This project shows how command-line text is built to store task,add list and del
 -download the file
 -cd to the directory where the program is found
 -run the program
+  To add task enter (./todo.sh add  name of task)
+  To delete task (./todo.sh del)
+  To list task (./todo.sh list)
 
 ```bash
 git clone
